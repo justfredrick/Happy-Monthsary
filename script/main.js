@@ -168,6 +168,51 @@ const animationTimeline = () => {
       0.2,
       "+=1"
     )
+
+
+
+    .fromTo(
+      ".love-letter",
+      1,
+      { opacity: 0 },
+      { opacity: 1 },
+      "+=0.2"
+    )
+    .staggerFromTo(
+      ".love-letter p",
+      4, // total duration per line (1.2s fade in + 1.3s fade out)
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 0, // ends back at 0
+        y: 0,
+        ease: Power2.easeOut,
+        onStart: function () {
+          TweenMax.to(this.target, 3.5, {
+            opacity: 1,
+            ease: Power2.easeOut,
+          });
+        },
+        onComplete: function () {
+          TweenMax.to(this.target, 0.5, {
+            opacity: 0,
+            ease: Power2.easeIn,
+          });
+        },
+      },
+      4, // ← this matches the total duration so next line waits
+      "+=0.2"
+    )
+
+
+
+
+
+    
+
+    
     .staggerFromTo(
       ".baloons img",
       2.5,

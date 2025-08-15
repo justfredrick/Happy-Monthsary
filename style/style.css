@@ -298,3 +298,25 @@ body {
     font-weight: lighter;
   }
 }
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital@0;1&display=swap');
+
+.love-letter {
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  width: 80%;
+  margin: 2rem auto;
+  text-align: left;
+  color: #333;
+  opacity: 0;
+  position: relative;
+}
+
+.love-letter p {
+  opacity: 0;
+  transform: translateY(20px);
+}
